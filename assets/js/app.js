@@ -78,7 +78,7 @@ const deleteFromDB = (id) => {
     db.ref().on('child_added', (snapshot) => {
         console.log(db.ref('-LQWWTynWCUv_DIjKTaB/db_train'));
         console.log(snapshot);
-        console.log(snapshot.Ce.path.n[0]);
+        console.log(snapshot.ref.path.pieces_[0]);
         console.log(snapshot.val());
         // console.log(snapshot.val().db_train.name);   
         let sv = snapshot.val();
@@ -86,7 +86,8 @@ const deleteFromDB = (id) => {
         console.log(sv.db_train.id);
         if(sv.db_train.id === id) {
             console.log(`ID: ${sv.db_train.id} detected`);
-            let remove = db.ref(snapshot.Ce.path.n[0]);
+            // let remove = db.ref(snapshot.Ce.path.n[0]);
+            let remove = db.ref(snapshot.ref.path.pieces_[0]);
             remove.remove().then(function(){
                 console.log('remove successful');
             }).catch(function(error){
