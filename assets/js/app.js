@@ -1,3 +1,5 @@
+console.log(`v. 8:50 AM`);  
+  
   // Initialize Firebase
   var config = {
     apiKey: "AIzaSyCk7T3d2TR7YhHywrqwmUOeG83x3sm70zM",
